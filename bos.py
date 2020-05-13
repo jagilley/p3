@@ -35,11 +35,11 @@ def eval_results(w_choice, m_choice):
         print("we do nothing")
         return (0,0)
 
-if __name__=="__main__":
+def run_sim(num_epochs):
     print("--------NEW SIM-------------")
     man = mab("man")
     woman = mab("woman")
-    for epoch in range(30):
+    for epoch in range(num_epochs):
         m_choice = man.pick_something()
         w_choice = woman.pick_something()
         print("woman chooses", w_choice, "and man chooses", m_choice)
@@ -48,3 +48,6 @@ if __name__=="__main__":
         woman.note_rewards(w_choice, results[0])
         print(man)
         print(woman)
+
+if __name__=="__main__":
+    run_sim(6)
